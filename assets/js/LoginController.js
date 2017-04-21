@@ -12,17 +12,8 @@
         })();
 
         function login() {
-           vm.dataLoading = true;
-            $http({
-                method: 'GET'
-                , url: 'https://swapi.co/api/people/1/'
-                , crossDomain: true
-                , contentType: "application/json; charset=utf-8"
-            }).then(function (response) {
-                //callback(response);
-                console.log('response', response);
-            });
-            /*AuthenticationService.Login(vm.username, vm.password, function (response) {
+            vm.dataLoading = true;
+            AuthenticationService.Login(vm.username, vm.password, function (response) {
                 if (response.success) {
                     AuthenticationService.SetCredentials(vm.username, vm.password);
                     $location.path('/');
@@ -31,7 +22,7 @@
                     FlashService.Error(response.message);
                     vm.dataLoading = false;
                 }
-            });*/
+            });
         };
     }
 })();

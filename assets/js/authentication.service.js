@@ -32,19 +32,11 @@
             }, 1000);*/
             /* Use this for real authentication
              ----------------------------------------------*/
-            /*$http.get('http://swapi.co/api/people/').success(function (response) {
-                callback(response);
-                console.log('response', response);
-            });*/
-            $http({
-                method: 'GET'
-                , url: 'http://swapi.co/api/people/1/'
-                , crossDomain: true
-                , contentType: "application/json; charset=utf-8"
-            }).then(function successCallback(response) {
+            $http.get('http://swapi.co/api/people/').then(function (response) {
                 callback(response);
                 console.log('response', response);
             });
+
         }
 
         function SetCredentials(username, password) {
@@ -56,7 +48,7 @@
                 }
             };
             // set default auth header for http requests
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+            $http.defaults.headers.common['Authorization'] =  authdata; //'Basic ' +
             // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
             var cookieExp = new Date();
             cookieExp.setDate(cookieExp.getDate() + 7);
@@ -68,7 +60,7 @@
         function ClearCredentials() {
             $rootScope.globals = {};
             $cookies.remove('globals');
-            $http.defaults.headers.common.Authorization = 'Basic';
+            //$http.defaults.headers.common.Authorization = 'Basic';
         }
     }
     // Base64 encoding service used by AuthenticationService
