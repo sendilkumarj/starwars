@@ -15,7 +15,7 @@
            vm.dataLoading = true;
             $http({
                 method: 'GET'
-                , url: 'http://swapi.co/api/people/1/'
+                , url: 'https://swapi.co/api/people/1/'
                 , crossDomain: true
                 , contentType: "application/json; charset=utf-8"
             }).then(function (response) {
