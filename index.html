@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <title>Star Wars</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Star Wars">
+    <link rel="shortcut icon" href="/assets/images/favicon.png">
+    <link rel="preload" href="https://cdn.xebia.com/assets/images/backgrounds/x-bg.svg" as="image">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" /> </head>
+
+<body class="xebiaBg">
+    <header class="header-basic-light">
+        <div class="header-limiter">
+            <!--<h1><a href="#">Company<span>logo</span></a></h1>--><img alt="Star Wars" src="assets/images/WEB_Star_Wars_Logo.png" />
+            <nav> <a href="">Home</a> <a href="">About</a> <a href="">Faq</a> <a href="">Contact</a> </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+            <div ng-view></div>
+        </div>
+    </div>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="assets/js/authentication.service.js"></script>
+    <script src="assets/js/flash.service.js"></script>
+    <script src="assets/js/user.service.js"></script>
+    <script src="assets/js/LoginController.js"></script>
+    <script src="assets/js/HomeController.js"></script>
+</body>
+
+</html>
