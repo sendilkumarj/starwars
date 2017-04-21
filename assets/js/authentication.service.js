@@ -13,7 +13,7 @@
         function Login(username, password, callback) {
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
-            $timeout(function () {
+            /*$timeout(function () {
                 var response;
                 UserService.GetByUsername(username).then(function (user) {
                     if (user !== null && user.password === password) {
@@ -29,13 +29,22 @@
                     }
                     callback(response);
                 });
-            }, 1000);
+            }, 1000);*/
             /* Use this for real authentication
              ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
+            /*$http.get('http://swapi.co/api/people/').success(function (response) {
+                callback(response);
+                console.log('response', response);
+            });*/
+            $http({
+                method: 'GET'
+                , url: 'http://swapi.co/api/people/1/'
+                , crossDomain: true
+                , contentType: "application/json; charset=utf-8"
+            }).then(function successCallback(response) {
+                callback(response);
+                console.log('response', response);
+            });
         }
 
         function SetCredentials(username, password) {
