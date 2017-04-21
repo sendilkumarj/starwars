@@ -6,11 +6,11 @@
     function config($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
             controller: 'HomeController'
-            , templateUrl: '../views/home.html'
+            , templateUrl: '/../views/home.html'
             , controllerAs: 'vm'
         }).when('/login', {
             controller: 'LoginController'
-            , templateUrl: '../views/login.html'
+            , templateUrl: '/../views/login.html'
             , controllerAs: 'vm'
         }).otherwise({
             redirectTo: '/login'
