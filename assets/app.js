@@ -6,11 +6,11 @@
     function config($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
             controller: 'HomeController'
-            , templateUrl: '/../views/home.html'
+            , templateUrl: 'starwars/../views/home.html'
             , controllerAs: 'vm'
         }).when('/login', {
             controller: 'LoginController'
-            , templateUrl: '/../views/login.html'
+            , templateUrl: 'starwars/../views/login.html'
             , controllerAs: 'vm'
         }).otherwise({
             redirectTo: '/login'
@@ -26,7 +26,7 @@
         }
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
+            var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $location.path('/login');
