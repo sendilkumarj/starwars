@@ -10,6 +10,18 @@
     padding: 8% 0 0;
     margin: auto;
 }
+a.logout-button {
+	font-size: 13px;
+	font-weight: bold;
+	float: right;
+	border-radius: 3px;
+	background-color: rgba(58, 60, 62, 0);
+	height: 40px;
+	padding: 0 20px;
+	border: 1px solid #5E6367;
+	line-height: 40px;
+	box-sizing: border-box;
+}
 
 .form {
     position: relative;
@@ -147,7 +159,9 @@
 .header-basic-light .header-limiter nav{
 	font:15px Arial, Helvetica, sans-serif;
 	line-height: 40px;
-	float: right;
+	float: left;
+    margin: 0 0 0 60px;
+	padding: 0;
 }
 
 .header-basic-light .header-limiter nav a{

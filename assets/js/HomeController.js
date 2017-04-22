@@ -7,7 +7,8 @@
         var vm = this;
         vm.user = null;
         vm.allUsers = [];
-        vm.deleteUser = deleteUser;
+        $rootScope.currentUser.userLogged = true;
+        //vm.deleteUser = deleteUser;
         initController();
 
         function initController() {
