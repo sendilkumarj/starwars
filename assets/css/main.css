@@ -3,7 +3,14 @@
     background-size: 3000px;
     background-position: top center;
 }
-
+.indicator{
+    width:10em;
+    height:1em;
+    background-color: #6c1d5f;
+    margin: 5px;
+    float: right;
+    display: inline-block;
+}
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 .login-page {
     width: 360px;

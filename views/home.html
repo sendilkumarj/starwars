@@ -30,8 +30,8 @@
     </div>
     <div class="col-md-6">
         <div ng-if="vm.searchResult.length">
-            <ul>
-                <li ng-repeat="planets in vm.searchResult">{{planets.name}}</li>
+            <ul class="list-group">
+                <li ng-repeat="planets in vm.searchResult" class="list-group-item">{{planets.name}}<span class="indicator" style="width:{{vm.actualPop(planets.population)}};">&nbsp;</span></li>
             </ul>
         </div>
     </div>
