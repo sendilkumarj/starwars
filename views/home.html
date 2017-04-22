@@ -1,3 +1,38 @@
-<div>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Star Wars Planets</h3> </div>
+    <div class="col-md-6 custom-search">
+        <form method="get" action="#">
+            <input type="text" placeholder="Search!" name="search"  ng-model="vm.searchIn" ng-change="vm.serachPlanet()"/> </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+  <thead class="thead-default">
+    <tr>
+      <th>Name</th>
+      <th>Water</th>
+      <th>Population</th>
 
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="planets in vm.planetsDetails">
+      <th scope="row">{{planets.name}}</th>
+      <td>{{planets.surface_water}}</td>
+      <td>{{planets.population}}</td>
+
+    </tr>
+
+  </tbody>
+</table>
+    </div>
+    <div class="col-md-6">
+        <div ng-if="vm.searchResult.length">
+            <ul>
+                <li ng-repeat="planets in vm.searchResult">{{planets.name}}</li>
+            </ul>
+        </div>
+    </div>
 </div>
