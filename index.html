@@ -14,9 +14,9 @@
 <body class="xebiaBg" ng-controller="mainController as mainVm">
     <header class="header-basic-light">
         <div class="header-limiter">
-            <!--<h1><a href="#">Company<span>logo</span></a></h1>--><img alt="Star Wars" src="assets/images/WEB_Star_Wars_Logo.png" class="img-responsive" />
+            <img alt="Star Wars" src="assets/images/WEB_Star_Wars_Logo.png" class="img-responsive" />
             <nav ng-if="currentUser.userLogged"> <a href="" class="selected">Home</a> <a href="">About</a> <a href="">Faq</a> <a href="">Contact</a> </nav>
-            <a href="" class="logout-button">Logout</a>
+            <a ng-if="currentUser.userLogged" href="" class="logout-button">Logout</a>
         </div>
     </header>
     <div class="container">
