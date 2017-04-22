@@ -11,32 +11,11 @@
         return service;
 
         function Login(username, password, callback) {
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
-            /*$timeout(function () {
-                var response;
-                UserService.GetByUsername(username).then(function (user) {
-                    if (user !== null && user.password === password) {
-                        response = {
-                            success: true
-                        };
-                    }
-                    else {
-                        response = {
-                            success: false
-                            , message: 'Username or password is incorrect'
-                        };
-                    }
-                    callback(response);
-                });
-            }, 1000);*/
-            /* Use this for real authentication
-             ----------------------------------------------*/
             $http.get('http://swapi.co/api/people/').then(function (response) {
                 callback(response);
-                console.log('response', response);
+            }, function myError(response) {
+                callback(response);
             });
-
         }
 
         function SetCredentials(username, password) {
@@ -48,7 +27,7 @@
                 }
             };
             // set default auth header for http requests
-            $http.defaults.headers.common['Authorization'] =  authdata; //'Basic ' +
+            $http.defaults.headers.common['Authorization'] = authdata; //'Basic ' +
             // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
             var cookieExp = new Date();
             cookieExp.setDate(cookieExp.getDate() + 7);
@@ -60,7 +39,7 @@
         function ClearCredentials() {
             $rootScope.globals = {};
             $cookies.remove('globals');
-            //$http.defaults.headers.common.Authorization = 'Basic';
+            $http.defaults.headers.common.Authorization = '';
         }
     }
     // Base64 encoding service used by AuthenticationService

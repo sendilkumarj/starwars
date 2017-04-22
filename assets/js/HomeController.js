@@ -27,10 +27,10 @@
             });
         }
 
-        function deleteUser(id) {
+        /*function deleteUser(id) {
             UserService.Delete(id).then(function () {
                 loadAllUsers();
             });
-        }
+        }*/
     }
 })();
