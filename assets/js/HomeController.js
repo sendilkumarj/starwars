@@ -60,7 +60,7 @@
             //console.log(val);
             var percent = '';
             if (val != 'unknown') {
-                 percent = parseInt(val)/vm.population.max() * 10 +'em';
+                 percent = parseInt(val)/vm.population.max() * 15 +'em';
 
             }else{
                 percent = 0+'em';
